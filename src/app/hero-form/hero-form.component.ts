@@ -8,13 +8,33 @@ import { Hero } from '../models/hero'
 })
 export class HeroFormComponent {
 
-  powers = ['Really Smart', 'Super Flexible', 
-            ' Super Hot', 'Weather Changer'];
+  powers = ['Really Smart', 
+  'Super Flexible', 
+  'Super Hot',
+  'Weather Changer'];
 
-            model = new Hero (18, 'Dr. IQ', this.powers[0], 'Chuck Overstreet');
+  model = new Hero (
+  18, 
+  'Dr. IQ', 
+  this.powers[0],
+  'Chuck Overstreet');
 
-            submitted = false;
+  submitted = false;
 
-            onSubmit() { this.submitted = true; 
-            }
-          }
+  onSubmit() 
+  { 
+    this.submitted = true; 
+  }
+
+
+  skyDog(): Hero {
+    const myHero = new Hero(42, 'Skydog',
+    'Fetch any object at any distance',
+    'Leslie Rollover');
+    console.log('My Hero is called ' + myHero.name);
+    return myHero;
+  }
+
+
+  
+}

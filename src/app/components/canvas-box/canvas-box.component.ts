@@ -2,6 +2,10 @@ import { Component,
    OnInit,
   ElementRef,
   ViewChild } from '@angular/core';
+  import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader.js';
+
+
+
   import * as THREE from 'three';
 
 @Component({
@@ -16,14 +20,13 @@ export class CanvasBoxComponent implements OnInit{
   myCanvas!: ElementRef;
 
 
-
   ngAfterViewInit(){
    // const canvasElement = this.myCanvas.nativeElement;
 
   //  this.createThreeJsBox(); 
   if (typeof window !== 'undefined') {
   const canvasElement = this.myCanvas.nativeElement;
-     this.createThreeJsBox(); 
+    this.createThreeJsBox(); 
   }
   }
 
@@ -59,8 +62,21 @@ export class CanvasBoxComponent implements OnInit{
         new THREE.TorusGeometry(5, 1.5, 16, 100),
         material
      );
+     
+     const sphere = new THREE.Mesh(
+      new THREE.SphereGeometry(2, 10),
+      material
+     );
+
+     const objLoader = new OBJLoader();
+        objLoader.load
+        ("newscene.obj", 
+        (root: THREE.Object3D) => {
+  //    Add the loaded model to your scene
+        scene.add(root);
+});
   
-     scene.add(torus, box);
+     scene.add(sphere);
 
      const canvasSizes = {
       width: window.innerWidth,
@@ -100,6 +116,7 @@ export class CanvasBoxComponent implements OnInit{
 
       const animateGeometry = () => {
         const elapsedTime = clock.getElapsedTime();
+
     
         // Update animation objects
         box.rotation.x = elapsedTime;
@@ -115,6 +132,7 @@ export class CanvasBoxComponent implements OnInit{
     
         // Call animateGeometry again on the next frame
         window.requestAnimationFrame(animateGeometry);
+
       };
     
       animateGeometry();
