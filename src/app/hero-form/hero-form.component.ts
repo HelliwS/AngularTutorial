@@ -26,6 +26,7 @@ export class HeroFormComponent {
     this.submitted = true; 
   }
 
+  
 
   skyDog(): Hero {
     const myHero = new Hero(42, 'Skydog',
