@@ -4,8 +4,6 @@ import { Component,
   ViewChild } from '@angular/core';
   import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader.js';
 
-
-
   import * as THREE from 'three';
 
 @Component({
@@ -70,13 +68,13 @@ export class CanvasBoxComponent implements OnInit{
 
      const objLoader = new OBJLoader();
         objLoader.load
-        ("newscene.obj", 
+        ("newscene.mtl", 
         (root: THREE.Object3D) => {
   //    Add the loaded model to your scene
         scene.add(root);
 });
   
-     scene.add(sphere);
+     scene.add(box, torus);
 
      const canvasSizes = {
       width: window.innerWidth,
