@@ -2,3 +2,15 @@
     max-width: 50rem;
     margin:auto;
 }
+.card {
+    position: absolute;
+    width: 200px; /* adjust to your card's width */
+    height: 100px; /* adjust to your card's height */
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: left 0.2s, top 0.2s;
+
+
+  }

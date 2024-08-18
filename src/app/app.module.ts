@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeroFormComponent } from './hero-form/hero-form.component';
 import { CanvasBoxComponent } from './components/canvas-box/canvas-box.component';
+import { TestingsubscribeComponent } from './testingsubscribe/testingsubscribe.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeroFormComponent,
-    CanvasBoxComponent
+    CanvasBoxComponent,
+    TestingsubscribeComponent
   ],
   imports: [
     BrowserModule,
